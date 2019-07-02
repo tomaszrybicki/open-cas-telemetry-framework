@@ -23,6 +23,7 @@ public:
      * @brief Empty command constructor
      */
     Command();
+    // TODO: implement setting cmd ops
 
     virtual ~Command();
 

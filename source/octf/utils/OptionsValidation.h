@@ -66,7 +66,7 @@ bool isDescValid(const std::string &desc);
  * Has valid short key or no short key (as it is optional)
  * Has valid description
  */
-bool isCommandValid(const proto::CliCommand &cmd);
+bool isCommandValid(const proto::CliCommandDesc &cmd);
 
 /**
  * @brief Checks if command set is valid for CLI usage.
@@ -78,7 +78,7 @@ bool isCommandValid(const proto::CliCommand &cmd);
  * Uniqueness of long keys is assured
  * Uniqueness of short keys is assured
  */
-bool isCommandSetValid(const proto::CliCommandSet &commandSet,
+bool isCommandSetValid(const proto::CliCommandSetDesc &commandSet,
                        bool validCommandsAssured = false);
 }  // namespace cliUtils
 }  // namespace octf
