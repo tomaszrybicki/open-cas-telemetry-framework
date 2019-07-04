@@ -5,6 +5,7 @@ set(DOXYGEN_GENERATE_MAN NO)
 set(DOXYGEN_RECURSIVE YES)
 set(DOXYGEN_EXCLUDE_PATTERNS "*/internal/*")
 set(DOXYGEN_USE_MDFILE_AS_MAINPAGE "${PROJECT_SOURCE_DIR}/README.md")
+set(DOXYGEN_FILE_PATTERNS *.md *.h *.cpp *.c)
 
 find_package(Doxygen)
 
@@ -13,6 +14,7 @@ if(DOXYGEN_EXECUTABLE)
         doc
         ${PROJECT_SOURCE_DIR}/source/octf
         ${PROJECT_SOURCE_DIR}/README.md
+        ${PROJECT_SOURCE_DIR}/doc/
         COMMENT "Generate doxygen documentation"
     )
 else()
