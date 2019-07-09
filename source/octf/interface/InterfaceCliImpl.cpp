@@ -5,9 +5,9 @@
 
 #include <google/protobuf/descriptor.h>
 #include <exception>
+#include <octf/cli/internal/OptionsValidation.h>
 #include <octf/interface/InterfaceCliImpl.h>
 #include <octf/utils/Exception.h>
-#include <octf/utils/OptionsValidation.h>
 #include <octf/utils/ProtoConverter.h>
 
 namespace octf {
@@ -69,7 +69,7 @@ void InterfaceCliImpl::getCliCommandSetDescription(
             }
             const octf::proto::CliCommandSetDesc &cmdSet = *response;
             // Check validness of whole created command set
-            if (!cliUtils::isCommandSetValid(cmdSet, true)) {
+            if (!cli::utils::isCommandSetValid(cmdSet, true)) {
                 throw Exception("Not valid command set.");
             }
         }
@@ -221,13 +221,13 @@ bool InterfaceCliImpl::isValidMethod(
         return false;
     }
 
-    if (!cliUtils::isShortKeyValid(opsMethod.cli_short_key())) {
+    if (!cli::utils::isShortKeyValid(opsMethod.cli_short_key())) {
         return false;
     }
-    if (!cliUtils::isLongKeyValid(opsMethod.cli_long_key())) {
+    if (!cli::utils::isLongKeyValid(opsMethod.cli_long_key())) {
         return false;
     }
-    if (!cliUtils::isDescValid(opsMethod.cli_desc())) {
+    if (!cli::utils::isDescValid(opsMethod.cli_desc())) {
         return false;
     }
 
