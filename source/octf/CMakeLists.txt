@@ -6,5 +6,4 @@ add_subdirectory(plugin)
 add_subdirectory(trace)
 add_subdirectory(socket)
 add_subdirectory(utils)
-add_subdirectory(c)
 
